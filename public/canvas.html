@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            background-color:#ddd;
+        }
+        #canvas{
+            display: block;
+            /*width:450px;*/
+            /*height:450px;*/
+            margin:20px auto;
+            background-color:#eee;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="450" height="450"></canvas>
+    <!--
+        getElementsByClassName: 效率高
+        querySelector  ie8+
+
+        制作流程：
+            1 绘制棋盘
+                1.1 绘制直线的操作
+            2 绘制棋子
+                2.1 如何绘制棋子
+                2.2 如何进行交互，点击下棋
+                2.3 一人一执棋
+                2.4 落子点问题 （棋子必须下到交叉点）, 自瞄系统
+                2.5 友军判断 已经下过棋的地方不下
+            3 游戏胜负判断
+                棋盘状态
+            五子棋胜负判断核心原理：
+                当前下下去的棋子参与到胜负判断中，并且此时下棋的人要么赢、要么不赢
+
+                一条线上左右颜色连续累加超过5，那么这个颜色获胜了
+    -->
+    <script>
+
+        var canvas = document.querySelector('#canvas'); //ie8+
+        var ctx = canvas.getContext('2d');
+        var Cheekcolor = ['black','white'];
+        var cheekArr = [] // 存放棋盘状态
+        var mode = [ // 判断模式  1正常走 -1反向
+            [1,0], // 水平
+            [0,1], // 垂直
+            [1,1], // 右下左上
+            [1,-1] // 右上左下
+        ]
+        for(var i=0; i<14;i++){
+            cheekArr[i] =[];
+            for(var j = 0; j<14;j++){
+                cheekArr[i][j] = 0;
+            }
+        }
+//        console.log(cheekArr)
+        // 绘制棋盘
+        for (var i = 0; i<14; i++) {
+            ctx.moveTo(30*(i+1),30);
+            ctx.lineTo(30*(i+1),420);
+            ctx.moveTo(30, 30*(i+1));
+            ctx.lineTo(420, 30*(i+1));
+            //  ctx.stroke() //写在此处会有bug 线条不一致
+        }
+        ctx.stroke() //将之前所有的路径全部绘制一次
+
+        // 下棋函数
+        function drawColor(x, y, color){
+            // 绘制路径画园 ， 圆心坐标x,y,半径r
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(x,y,15,0,Math.PI*2,false);
+            ctx.fill();
+        }
+        // 步数
+        var step = 0
+        // 开始下棋
+        canvas.addEventListener('click', function (e) {
+            // 自瞄系统  将点放在交叉处
+//            var dx = Math.floor((e.offsetX + 15)/30)*30;  // 0 -30 / 0  30 - 60 / 30
+//            var dy = Math.floor((e.offsetY + 15)/30)*30;
+
+//            console.log(dx,dy)
+            // 棋盘边不判断
+//            if (dx == 0 || dy == 0 || dx == 450 || dy == 450) {
+//                return
+//            }
+//            if (cheekArr[dx/30][dy/30] ==0 ){
+//                drawColor(dx,dy, Cheekcolor[step % 2])
+//                cheekArr[dx/30-1][dy/30-1] = Cheekcolor[step % 2];
+//                win(dx/30 - 1,dy/30 - 1,  Cheekcolor[step % 2])
+//                step++
+//            }
+                var px = Math.floor((e.offsetX + 15)/30) - 1;
+                var py = Math.floor((e.offsetY + 15)/30) - 1;
+                if ((px+1)*30 == 0 || (py+1)*30 == 0 || (px+1)*30 == 450 || (py+1)*30 == 450){
+                    return
+                }
+                if (cheekArr[px][py] == 0){
+                    drawColor((px+1)*30,(py+1)*30,Cheekcolor[step % 2])
+                    cheekArr[px][py] = Cheekcolor[step % 2]
+                    win(px,py,Cheekcolor[step % 2],mode[0])
+                    win(px,py,Cheekcolor[step % 2],mode[1])
+                    win(px,py,Cheekcolor[step % 2],mode[2])
+                    win(px,py,Cheekcolor[step % 2],mode[3])
+                    step++
+                }
+        })
+        // 胜负判断
+        function win(x,y,color,mode) { // 黑/白/平
+            var count = 0;
+            for (var i=1; i<5;i++) {
+                if (cheekArr[x+i*mode[0]]) {
+                    if(cheekArr[x+i*mode[0]][y+i*mode[1]] == color){
+                        count++
+                    }else {
+                        break;
+                    }
+                }
+            }
+            for (var i = 0; i < 5; i++) {
+                if (cheekArr[x-i][y] == color){
+                    count++
+                }else{
+                    break;
+                }
+            }
+            if (count>=5) {
+                alert(color+'-win')
+            }
+        }
+    </script>
+</body>
+</html>

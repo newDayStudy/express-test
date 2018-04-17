@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>���׹�����_app����</title>
+    <base target="_blank">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="content-style-type" content="text/css"/>
+    <meta http-equiv="content-script-type" content="text/javascript"/>  
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta content="������,��ѧ,Ү³��ѧ,�����ѧ,���׹�����,��Ƶ," name="keywords">
+    <meta content="������Ƶ������Ƶ���Ƴ���������У������,�漰�㷺��ѧ��,��У��ʦ���潲���������,������Ƶ������Ƶ�����ǿ������������Ƶ��ѧƽ̨" name="description">
+    <meta property="wb:webmaster" content="0f8017b03c5331b8">
+    <meta property="og:site_name" content="���׹�����" />
+    <meta property="og:title" content="���׹�����" />
+    <meta property="xn:page_id" content="698000112" />
+    <meta property="xn:admins" content="378197707" />
+    <meta name="viewport" content="width=1280, initial-scale=1"/>
+    <base target="_blank"></base>
+	<link rel="icon" href="//c.open.163.com/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="//c.open.163.com/favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" href="//s2.open.163.com/ocb/css/style.css">
+    <script>
+        if(/android.*?mobile|ipod|blackberry|bb\d+|phone/i.test(navigator.userAgent)){
+                window.location.href="http://open.163.com/appdownload/mobile";
+        }
+    </script>
+    <style type="text/css">
+    .g-container{ width:1180px;}
+    .u-appsprite{ background:url(//img0.ph.126.net/_VhAyJ3ZJdfX5FXi9YDP6w==/4846436149104506151.png) 9999px 9999px no-repeat;}
+    .g-se1{ height:616px; background:url(//img2.ph.126.net/SrQ9TgSsrLVc3gHr2u1A-w==/3230488307808492635.jpg) center center; background-color:#2f7e54;}
+    .g-se1 .nots{ opacity:0; filter:alpha(opacity=0);}
+    .g-se1 .bimg1{ width:600px; height:416px; top:90px; left:-105px;}
+    .g-se1 .bimg2{ width:478px; height:128px; top:130px; right:-33px;}
+    .g-se1 .btns{ top:300px; right:-90px; width:540px; height:44px; overflow:hidden;}
+    .g-se1 .btn{ margin-right:16px; height:44px; float:left;}
+    .g-se1 .btn1{ width:104px; background-position:0 0;}
+    .g-se1 .btn1:hover{ background-position:-104px 0;}
+    .g-se1 .btn2{ width:104px; background-position:0 -44px;}
+    .g-se1 .btn2:hover{ background-position:-104px -44px;}
+    .g-se1 .btn3{ width:128px; background-position:0 -88px}
+    .g-se1 .btn3:hover{ background-position:-128px -88px;}
+    .g-se1 .btn4{ margin-right:0; width:152px; background-position:0 -132px}
+    .g-se1 .btn4:hover{ background-position:-152px -132px;}
+    .g-se1 .updateInfo{ top:390px; right:-40px; width:500px; height:110px; overflow:hidden;}
+    .g-se1 .updateInfo h4{ line-height:34px; color:#c0c37c; font-size:17px; margin:0;}
+    .g-se1 .updateInfo a{ line-height:24px; font-size:15px;}
+    .g-se1 .updateInfo a:hover{ text-decoration:underline;} 
+    .g-se2{ height:220px; padding:60px 0; background:#fff;}
+    .g-se2 .list{}
+    .g-se2 .item{ border-right:1px solid #e4e4e4; height:220px; width:294px; text-align:center; opacity:0; transform: matrix(0.9, 0, 0, 0.9, 0, 0);}
+    .g-se2 .item.last{ border:none;}
+    .g-se2 .item .ic{ margin:20px auto 45px auto;}
+    .g-se2 .item .ictit{ height:26px; margin:0 auto 10px auto;}
+    .g-se2 .item .txt{ font-size:13px; line-height:24px; padding:0 10px}
+    .g-se2 .item .ic1{ background-position:0 -185px; width:76px; height:80px; margin-top:9px;}
+    .g-se2 .item .ictit1{ background-position:-104px -200px; width:156px;}
+    .g-se2 .item .ic2{ background-position:0 -273px; width:87px; height:73px;}
+    .g-se2 .item .ictit2{ background-position:-104px -284px; width:234px;}
+    .g-se2 .item .ic3{ background-position:0 -353px; width:102px; height:72px;}
+    .g-se2 .item .ictit3{ background-position:-127px -364px; width:156px;}
+    .g-se2 .item .ic4{ background-position:0 -432px; width:113px; height:73px;}
+    .g-se2 .item .ictit4{ background-position:-127px -456px; width:129px;}
+    .g-se3{ height:500px; background:#efdfbb;}
+    .g-se3 .sew{ height:100%;}
+    .g-se3 .ck{ height:500px; width:770px; top:0; left:0;}
+    .g-se3 .txt1{ width:422px; height:120px; top:145px; right:0; background-position:0 -512px;}
+    .g-se3 .txt2{ width:253px; height:23px; top:300px; right:180px; background-position:0 -669px;}
+    .g-se3 .play{ top:50%; left:50%; margin-left:-53px; margin-top:-53px; width:106px; height:106px; background-position:-1px -694px; }
+    .g-se4{ padding:60px 0 70px 0; background:#2f7e54;}
+    .g-se4 .left{ width:840px; height:212px; border-right:1px solid #599876;}
+    .g-se4 .left li{ float:left; width:96px; text-align:left; line-height:35px; height:35px;}
+    .g-se4 .left li a{ color:#fff; font-size:13px;}
+    .g-se4 .left li a:hover{ text-decoration:underline;}
+    .g-se4 .right{ width:290px;}
+    .g-se4 .tit{ color:#fff; line-height:39px; font-size:39px; margin-bottom:20px;}
+    .g-se4 .tit span{ font-size:14px; line-height:45px; padding-left:9px;}
+    .g-se4 .imitem{ margin-right:35px; width:120px;}
+    .g-se4 .imitem img{ width:120px; height:120px;}
+    .g-se4 .imitem p{ line-height:33px; text-align:center; color:#fff;}
+    .g-se4 .imitem.last{ margin:0;}
+    .u-dl{ background:#fff; top:50%; left:50%; margin:-250px 0 0 -333px; width:666px; height:500px}
+    .u-dl .close{ display:block; right:0; top:0; height:40px; width:40px; font-size:16px; text-align: center; line-height:40px;}
+    .u-dl .con{ padding:20px;}
+    .u-dl .con h3{ font-size:20px; margin:0 0 15px 0;}
+    .u-dl .con .update{ line-height:24px;}
+    .u-dl .con h4{ font-size:16px; margin:0; line-height:24px; color:#76a487; padding-bottom:5px;}
+    .u-dl .con .des{ font-size:15px; line-height:22px;}
+    .u-dl .con .btn{ display:block; width:230px; height:78px; margin:10px auto;}
+    .u-dl .con .btn.ios{ background-position:0 -811px;}
+    .u-dl .con .btn.and{ background-position:0 -892px;}
+    .u-dl .con .ewa{ display:block; width:120px; margin:10px auto; cursor:default;}
+    .u-dl .con .ew{ width:120px; height:120px;}
+    .u-vd{ width:100%; height:100%; top:0; left:0; bottom:0; z-index:9999;}
+    .u-vd .close{ display:block; right:20px; top:20px; height:46px; width:46px; background-position:-120px -723px;} 
+    .u-vd .bg{ width:100%; height:100%;}
+    .u-vd .videobox{ top:50%; left:50%; background:#000; margin:-270px 0 0 -480px; width:960px; height:540px; box-shadow:0 0px 20px #222;}
+    .shareBtn{ background-position:-246px -802px; cursor:pointer;}
+    .shareBtn:hover{ background-position:-246px -837px;}
+    .shareBtn .sharebox{ position:absolute; width:170px; height:24px; right:42px; top:0; background: #fff; padding:8px;overflow:hidden; display:none; box-shadow:0 0px 5px #aaa;}
+    </style>
+</head>
+<body data-pagename="appDownload">
+<script>
+(function(){
+    var VIDEO_URL_REG=/^http(s)?:\/\/v\.163\.com\//g;
+    var OPEN_URL="//open.163.com";
+    var VIDEO_URL="//v.163.com";
+    var _url=window.location.href;
+    if(VIDEO_URL_REG.test(window.location.href)){
+        window.location.href=_url.replace(VIDEO_URL,OPEN_URL);
+    }
+})();
+(function(){
+    var PLAY_URL_REG=/^http(s)?:\/\/(open|v)\.163\.com\/movie\/\d{4}\/\d+\/[0-9A-Z]{1}\/[0-9A-Z]{1}\/([0-9A-Z]+)_([0-9A-Z]+)\.html/g;
+ if((/_touchall=1/.test(location.search)||!/auto|house|home|bbs|blog/.test(location.host))&&!(document.documentElement&&document.documentElement.getAttribute("phone"))&&/163\.com/.test(location.host)&&!/_pc=1/.test(location.search)&&/android.*?mobile|ipod|blackberry|bb\d+|phone/i.test(navigator.userAgent)){
+  if(PLAY_URL_REG.test(window.location.href)){
+    var _pid=RegExp.$3;
+    var _mid=RegExp.$4;
+    var _isShare=/type=share/ig.test(window.location.href);
+    if(_pid && _mid){
+      var _params="?plid="+_pid+"&rid="+_mid;
+      if(_isShare){
+        _params+="&type=share";
+      }
+      window.location.href="http://m.open.163.com/movie"+_params;
+    }else{
+      //console.log('id not found');
+    }
+  }else{
+    document.write('<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/><div style="position:fixed;width:100%;height:100%;background:#fff"><div style="position:absolute;top:50%;left:0;width:100%;height:40px;margin-top:-40px;text-align:center;background:url(http://static.ws.126.net/utf8/endpage/image/loading.gif) no-repeat top center;padding-top:40px;color:#666">ҳ������� ...</div></div><script src="http://static.ws.126.net/f2e/system/touchall/collect/foot~SaYvVsqAPu5d.js"'+' defer><'+'/script><plaintext style="display:none">');
+  }
+ }
+ 
+})();
+</script>
+<script>if((/_touchall=1/.test(location.search)||!/auto|house|home|bbs|blog/.test(location.host))&&!/\/dy.163.com\/v2/.test(location.href)&&!(document.documentElement&&document.documentElement.getAttribute("phone"))&&/163\.com/.test(location.host)&&!/_pc=1/.test(location.search)&&/android.*?mobile|ipod|blackberry|bb\d+|phone/i.test(navigator.userAgent))document.write('<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/><div style="position:fixed;width:100%;height:100%;background:#fff"><div style="position:absolute;top:50%;left:0;width:100%;height:40px;margin-top:-40px;text-align:center;background:url(http://img1.cache.netease.com/utf8/endpage/image/loading.gif) no-repeat top center;padding-top:40px;color:#666">ҳ������� ...</div></div><script src="http://static.ws.126.net/f2e/system/touchall/collect/foot~M2Tn9VR49xqt.js"'+' defer><'+'/script><plaintext style="display:none">');</script>
+<!-- @SMNAV -->
+<!-- app download banner -->
+<style type="text/css">
+.u-appbanner{ z-index:100; padding:30px 20px; display:none; background:#24794b;}
+.u-appbanner.isMobile{ display:block;}
+.u-appbanner .logo{ width:305px; height:83px; background:url(http://img0.ph.126.net/xZTep95Rkn6e_GUjRw22Gg==/6608586051446202447.png) 0 0 no-repeat;}
+.u-appbanner .close{ margin:30px 0 0 25px; width:28px; height:28px; background:url(http://img0.ph.126.net/xZTep95Rkn6e_GUjRw22Gg==/6608586051446202447.png) 0 -168px no-repeat;}
+.u-appbanner .dlbtn{ margin-top:10px; width:178px; height:64px; background:url(http://img0.ph.126.net/xZTep95Rkn6e_GUjRw22Gg==/6608586051446202447.png) 0 -97px no-repeat;}
+</style>
+<div class="u-appbanner f-pr f-cb" id="j-appbanner">
+	<div class="logo f-fl"></div>
+    <a class="f-fr close" id="j-appbanner-close"></a>
+    <a class="f-fr dlbtn" href="http://v.163.com/special/phonedownload/"></a>
+</div>
+<script type="text/javascript">
+(function(g, doc) {
+	var bannerNode = doc.getElementById('j-appbanner');
+	var testAndroid = /(android)/ig,
+        testAppleIphone = /(iphone)/ig,
+        testAppleIpad = /(ipad)/ig;
+    var useragent = navigator.userAgent.toLowerCase(); 
+    var isMobile = testAndroid.test(useragent) || testAppleIphone.test(useragent) || testAppleIpad.test(useragent);
+	doc.getElementById('j-appbanner-close').onclick = function(){
+		bannerNode.style.display = 'none';
+	}	
+	if(isMobile){
+		bannerNode.className = 'u-appbanner f-cb isMobile';
+	}
+})(window, document);
+</script>
+<!-- /app download banner -->
+  <!-- ͨ��С���� -->
+  <div class="g-wrap">
+    <div class="m-smnav rel">
+      <div class="g-container clear">
+        <a href="http://open.163.com" target="_blank">
+          <div tit="���׹�����" class="f-fl img"></div>
+        </a>
+        <form accept-charset="utf-8" id="j-SearchForm" target="_blank" action="http://c.open.163.com/search/search.htm">
+          <div class="search left rel j-input">
+            <label class="phold f-c9" for="j-search" style="display: block;">�����γ̡���Ƶ���߻�</label>
+            <input autocomplete="off" type="text" name="query" class="inputxt j-txt" id="j-search">
+            <input type="submit" class="subbtn f-icon" value="�e">
+            <input type="hidden" name="enc" value="&#153;">
+          </div>
+        </form>
+        <ul class="u-nav2 right clear">
+          <li class="left li rel j-hoverdown" data-for="j-hoverdown-mycenter">
+            <a class="f-cgreen" href="http://c.open.163.com/center/myCourse.htm"><span>�ҵĹ�����</span><span class="f-icon">�^</span></a>
+            <ul class="hd-mycenter hide abs j-downitem">
+              <li><a class="link f-c6" href="http://c.open.163.com/center/myCourse.htm">�ҵĿγ�</a></li>
+              <li><a class="link f-c6" href="http://c.open.163.com/center/myRecord.htm">���ż�¼</a></li>
+              <li><a class="link f-c6" href="http://c.open.163.com/center/myNotes.htm">�ҵıʼ�</a></li>
+              <li><a class="link f-c6 j-logoutBtn j-login">�˳�</a></li>
+            </ul>
+          </li>
+          <li class="left li rel j-hoverdown">
+            <span class="f-icon f-c6">�f</span><span class="f-c6">��ע����</span>
+            <ul class="hd-share hide abs j-downitem clear">
+              <li class="left"><a class="shicon1" href="http://weibo.com/163open" target="_blank"></a></li>
+              <li class="left"><a class="shicon2" href="http://t.163.com/163open" target="_blank"></a></li>
+              <li class="left"><a class="shicon3" href="http://page.renren.com/698000112/?checked=true" target="_blank"></a></li>
+              <li class="left"><a class="shicon4" href="http://user.qzone.qq.com/1426115874/" target="_blank"></a></li>
+            </ul>
+          </li>
+          <li class="left li last"><a href="http://open.163.com/appdownload/" class="f-cgreen">�ͻ�������</a></li>
+        </ul>
+        <div class="u-nav u-login j-login right hide">
+          <span class="li f-c6 j-username">opencourse@163.com</span>
+        </div>
+        <span class="u-nav u-beforelogin j-beforelogin right">
+          <span class="f-c6 li">��ӭ�������׹�����!</span>
+          <a class="f-c6 li j-loginBtn"  id="urs_login_btn" >��¼/ע��</a>
+        </span>
+      </div>
+    </div>
+    <!-- ��½�� -->
+    <div class="hide" id="j-loginDialog">
+        <div class="tit clear f-f0">
+            <div class="left">��¼����ͨ��֤</div>
+            <a class="close right f-icon f-c3" id="j-closelogin">�c</a>
+        </div>
+        <div class="logarea">
+          <span class="f-c9">ʹ������ͨ��֤(����������)�ʺŵ�¼</span>
+            <form method="post" target="_self" action="https://reg.163.com/logins.jsp" id="j-loginForm">
+                <div class="ipt rel" style="z-index:20">
+                  <div class="inp j-input">
+                    <input autocomplete="off" type="text" class="text j-txt" name="username" id="j-passport">
+                    <label class="abs" for="j-passport">�˺ţ���name@example.com</label>
+                    <ul class="suggest hide f-cb" id="j-suggest"></ul>
+                  </div>
+                </div> 
+                <div class="ipt rel" style="z-index:15">
+                  <div class="inp j-input">
+                    <input autocomplete="off" type="password" class="text j-txt" name="password" id="j-password">
+                    <label class="abs" for="j-password">����</label>
+                  </div>
+                </div>
+                <div class="ipt f-cb" style="z-index:10">
+                    <input class="left" type="checkbox" value="1" checked="checked" name="savelogin" id="j-autologin">
+                    <label class="left f-c9" for="j-autologin">�Զ���¼</label>
+                  <a class="right f-c6" style="line-height:1;" href="http://reg.163.com/RecoverPasswd1.shtml">�������룿</a>
+              </div>
+          <div class="ipt">
+            <input type="button" value="�� ¼" class="submitBtn" id="j-submitLogin"></input>
+          </div>
+          <div class="ipt">
+            <span class="f-c6">û���˺ţ�</span>
+            <a class="f-cgreen" href="http://reg.163.com/reg/reg.jsp?product=open">����ע��>></a>
+          </div>
+          <input type="hidden" value="open" name="product">
+          <input type="hidden" name="append" value="1"/>
+          <input type="hidden" value="http://open.163.com/" class="url" name="url">
+            </form>
+        </div>
+    </div>
+    <!-- /��½�� -->
+    <!-- ȷ�Ͽ� -->
+    <div id="j-feedbackTip" class="u-feedbackTip f-cb" style="display:none">
+        <span class="f-ib f-fl"></span>
+        <h1 class="f-ib f-fl"></h1>
+    </div>
+    <div id="j-confirmBox" class="m-confirmBox" style="display:none">
+        <div class="box">
+            <p class="txt"></p>
+        </div>
+        <div class="btn f-cb">
+            <div class="yes f-fl">ȷ��</div>
+            <div class="false f-fl">ȡ��</div>
+        </div>
+    </div>
+    <!-- /ȷ�Ͽ� -->
+  </div>
+  <script>document.domain = "163.com";</script>
+  <!-- /ͨ��С���� -->
+  <!-- /@SMNAV -->
+<!-- URS -->
+<script>try{window.__HOTLIST=[{"desc":"�޹�������Ȥζ�ݽ�","displayKey":"Ted","searchKey":"Ted"},{"desc":"���˳ɹ���ʱ�������","displayKey":"����ƿ��������ʱ��","searchKey":"����ƿ��������ʱ��"},{"desc":"����Ұʷ����","displayKey":"��ʷ","searchKey":"��ʷ"},{"desc":"������Լ�����������","displayKey":"�������ŵļ���","searchKey":"�������ŵļ���"},{"desc":"���ʵ��ݽ����������ؽ�����","displayKey":"�ݽ�","searchKey":"�ݽ�"},{"desc":"��������","displayKey":"��γ�Ϊ�������","searchKey":"��γ�Ϊ�������"},{"desc":"�����ˣ�������","displayKey":"����ѧ","searchKey":"����ѧ"},{"desc":"���������·","displayKey":"����ΪʲôҪ����ѧ","searchKey":"����ΪʲôҪ����ѧ"},{"desc":"Ԫ������ô��","displayKey":"��¥��","searchKey":"��¥��"},{"desc":"��ѧ�ǿ�ѧ��Ů����","displayKey":"��ѧ","searchKey":"��ѧ"}];}catch(e){window.__HOTLIST=[];}</script>
+<script type="text/javascript">
+    window.openCourse = (function(_oc){
+        var _loadScript=function(url, callback) {
+            var head = document.head || document.getElementsByTagName("head")[0] || document.documentElement,
+                script,
+                options;
+            if (typeof url === "object") {
+                options = url;
+                url = undefined;
+            }
+            var s = options || {};
+            url = url || s.url;
+            callback = callback || s.success;
+            script = document.createElement("script");
+            script.async = s.async || false;
+            script.type = "text/javascript";
+            if (s.charset) {
+                script.charset = s.charset;
+            }
+            if (s.cache === false) {
+                url = url + (/\?/.test(url) ? "&" : "?") + "_="+(new Date()).getTime();
+            }
+            script.src = url;
+            head.insertBefore(script, head.firstChild);
+            if (callback) {
+                document.addEventListener ? script.addEventListener("load", callback, false) : script.onreadystatechange = function() {
+                    if (/loaded|complete/.test(script.readyState)) {
+                        script.onreadystatechange = null
+                        callback()
+                    }
+                }
+            }
+        }
+        var _initURS=function(){
+            var urs = new URS(_config);
+    	    urs.logincb = function(_username){
+    	      location.reload();
+    	    }
+    	    urs.regcb = function(_username){
+    	      location.reload();
+    	    }
+    	    _oc._urs = urs;
+            _oc._ursInstance= urs;
+        }
+	var _config = {
+	       skin : '1',// Ƥ��
+	       product : 'open', // ��Ʒ����
+	       promark : 'hQvjXOs',// ��ƷID
+           productkey : '6468f58024d1d5cf7bba762df23e3c97',
+	       host : 'open.163.com',// ��Ʒhost
+	       page : 'login',// ����
+	       bid : 'urs_login_btn',
+	       eventType : 'click',
+           isHttps:1,
+	       single : 0,// �Ƿ�ֻ��һ��ģ�飬1�ǣ�0��
+           cssDomain:'https://s2.open.163.com/',
+           cssFiles: 'ocb/css/page/loginIframe.css',
+           needUnLogin:1,
+           unLoginTime:10,
+           oauthLoginConfig:[
+                { 'name' : 'weibo', 'url' : 'https://reg.163.com/outerLogin/oauth2/connect.do?target=3&url=https%3A%2F%2Fwebzj.reg.163.com%2Fwebapp%2Fres%2Fstatichtml%2Fthird.html&url2=https%3A%2F%2Fwebzj.reg.163.com%2Fwebapp%2Fres%2Fstatichtml%2Fthird.html&product=open_wap' },
+                { 'name' : 'weixin', 'url' : 'https://reg.163.com/outerLogin/oauth2/connect.do?target=13&url=https%3A%2F%2Fwebzj.reg.163.com%2Fwebapp%2Fres%2Fstatichtml%2Fthird.html&url2=https%3A%2F%2Fwebzj.reg.163.com%2Fwebapp%2Fres%2Fstatichtml%2Fthird.html&product=open_wap' }
+           ]
+	};
+	if(window['URS']){
+	    _initURS();
+	}else{
+	    _loadScript({url:'https://ursdoccdn.nosdn.127.net/webzj_cdn101/message_170510.js'},_initURS);
+	}
+	return _oc;
+    })(window.openCourse || {});
+</script>
+<!-- /URS -->
+<!-- 2018-04-10 16:22:58 -->
+  <!-- ios���� -->
+  <div id="j-ios-dialog" class="hide">
+      <a class="close f-icon f-pa j-dl-close">�c</a>
+      <div class="con">
+          <h3 class="f-c6 j-dltit">iPhone������</h3>
+          <p class="update f-c6">���£�2017-08-14 | ��ǰ�汾��v5.1.0 | ��С��38.4 M | ϵͳҪ��iOS 8.0+</p>
+          <div class="b-10"></div>
+          <h4>��װ����һ��ͨ��iTunesͬ��</h4>
+          <p class="des f-f0 f-c3">����·���ť����ҳ�棬�����View In iTunes������iTunes�����ظ�Ӧ�ó��򣬲�ͬ����iPhone�ϡ�</p>
+          <a href="http://itunes.apple.com/cn/app/id415424368?mt=8" class="u-appsprite btn ios"></a>
+          <h4>��װ�����������ֻ�������װ</h4>
+          <p class="des f-f0 f-c3">��App Store�ѡ����׹����Ρ����㡰���׹����Ρ���װ��<br/> ��ʹ�����ֻ��ϵ�����ɨ�����ɨ���·��Ķ�ά�룬���ɻ�ð�װ����</p>
+          <a class="ewa"><img class="ew" src="//img2.ph.126.net/3J4d8Llvn_3p3N5SvBbIOw==/6608565160724877629.png"></a>
+      </div>
+  </div>
+  <!-- android phone���� -->
+  <div id="j-androidphone-dialog" class="hide">
+      <a class="close f-icon f-pa j-dl-close">�c</a>
+      <div class="con">
+          <h3 class="f-c6 j-dltit">Android������</h3>
+          <p class="update f-c6">���£�2017-08-24 |��ǰ�汾��v5.1.3|��С��19.94M ֧�ֱַ��ʣ�1080��1920��1080��1900��960��640��854��480��800��480��480��320</p>
+          <div class="b-10"></div>
+          <h4>��װ����һ�����ص�����</h4>
+          <p class="des f-f0 f-c3">����apk�ļ���ͨ�������߻���������䵽�ֻ��ڴ濨�У����ļ���������ִ�а�װ��</p>
+          <a href="//file.ws.126.net/opencourse/netease_open_androidphone.apk" class="u-appsprite btn and j-dlurl"></a>
+          <h4>��װ�����������ֻ�����</h4>
+          <p class="des f-f0 f-c3">ʹ�����ֻ��ϵ�����ɨ�����ɨ���·��Ķ�ά�룬���ɻ��</p>
+          <a class="ewa"><img class="ew" src="//img1.ph.126.net/F9XrMdiFmnjHQzUOmdX4Aw==/6608876322515539906.png"></a>
+      </div>
+  </div>
+  <!-- android pad���� -->
+  <div id="j-androidpad-dialog" class="hide">
+      <a class="close f-icon f-pa j-dl-close">�c</a>
+      <div class="con">
+          <h3 class="f-c6 j-dltit">Android pad������</h3>
+          <p class="update f-c6">��ǰ�汾��v1.1.0 build 20131115 | ��С��2.0M ֧��ϵͳ��android4.2</p>
+          <div class="b-10"></div>
+          <h4>��װ����һ�����ص�����</h4>
+          <p class="des f-f0 f-c3">����apk�ļ���ͨ�������߻���������䵽�ֻ��ڴ濨�У����ļ���������ִ�а�װ��</p>
+          <a href="//file.ws.126.net/opencourse/netease_open_androidpad.apk" class="u-appsprite btn and j-dlurl"></a>
+          <h4>��װ�����������ֻ�����</h4>
+          <p class="des f-f0 f-c3">�ֻ������ַ��http://3g.163.com/links/3417<br/>��ʹ�����ֻ��ϵ�����ɨ�����ɨ���·��Ķ�ά�룬���ɻ��</p>
+          <a class="ewa"><img class="ew" src="//img1.ph.126.net/F9XrMdiFmnjHQzUOmdX4Aw==/6608876322515539906.png"></a>
+      </div>
+  </div>
+  <!-- ��Ƶ���� -->
+  <div id="j-video-dialog" class="u-vd f-fxd hide">
+      <img class="bg f-pa" src="//img0.ph.126.net/dA-3UlgIU1sXB5JbyV-SVw==/2108529050640272904.jpg"></img>
+      <a class="close f-pa j-vdl-close u-appsprite"></a>
+      <div class="videobox f-pa" id="j-player"></div>
+  </div>
+  <div class="g-se1">
+      <div class="g-container f-pr">
+        <img src="//img0.ph.126.net/nH-9VIUD1HofCraQNGLQ2g==/1747959605473481883.png" class="f-pa bimg1 j-banner nots">
+        <img src="//open-image.nosdn.127.net/bda380f0e3bb4e55bf37003eed9f6a57.png" class="f-pa bimg2 j-banner nots">
+        <div class="f-pa btns j-banner nots">
+            <a class="btn btn1 f-hide u-appsprite j-dlbtn-ios">iPhone������</a>
+            <a class="btn btn2 f-hide u-appsprite j-dlbtn-ios">iPad������</a>
+            <a class="btn btn3 f-hide u-appsprite j-dlbtn-andphone">Android������</a>
+            <a class="btn btn4 f-hide u-appsprite j-dlbtn-andpad">Android pad������</a>
+        </div>
+        <div class="f-pa j-banner updateInfo nots">
+            <h4>������£�</h4>
+            <div>
+                <p class="f-thide"><a class="f-cf" href="http://openclient.blog.163.com/blog/static/184806248201771434754717/">[Android Phone]5.1.3������</a></p>
+                <p class="f-thide"><a class="f-cf" href="http://openclient.blog.163.com/blog/static/184806248201771434754717/">[iPad/iPhone]5.1.0������</a></p>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="g-se2">
+      <div class="g-container">
+          <ul id="j-fnlist">
+              <li class="item f-fl j-fnitem">
+                  <div class="ic u-appsprite ic1"></div>
+                  <div class="ictit u-appsprite ictit1 f-hide">������У�γ�</div>
+                  <p class="txt f-c9">�γ���ȫ��������죡15000�༯��Ʒ�γ̣�<br/>����ȫ���������򡣻�����壬��������</p>
+              </li>
+              <li class="item f-fl j-fnitem">
+                  <div class="ic u-appsprite ic2"></div>
+                  <div class="ictit u-appsprite ictit2"></div>
+                  <p class="txt f-c9">�γ̿����ص����أ�<br/>֧��������ۿ���֧�ֶϵ�������</p>
+              </li>
+              <li class="item f-fl j-fnitem">
+                  <div class="ic u-appsprite ic3"></div>
+                  <div class="ictit u-appsprite ictit3"></div>
+                  <p class="txt f-c9">�Զ���¼�γ̹ۿ����ȣ�<br/>֧�ֶϵ�����������ѧϰ����</p>
+              </li>
+              <li class="item f-fl j-fnitem last">
+                  <div class="ic u-appsprite ic4"></div>
+                  <div class="ictit u-appsprite ictit4"></div>
+                  <p class="txt f-c9">��ϲ���Ŀγ̼����ղأ�����Я����<br/>���ƶ�ͬ�����������ڲ�ͬ�豸�ϵĹۿ�����</p>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div class="g-se3">
+      <div class="g-container sew f-pr">
+          <img src="//img1.ph.126.net/x5oiLJbxLDx7FwfP87zkLQ==/6597255584123912197.jpg" class="f-pa ck">
+          <div class="txt1 u-appsprite f-pa"></div>
+          <div class="txt2 u-appsprite f-pa"></div>
+          <a class="play u-appsprite f-pa" id="j-play">
+          </a>
+      </div>
+  </div>
+  <div class="g-se4">
+      <div class="g-container f-cb">
+          <div class="left f-fl">
+              <h3 class="tit">�������</h3>
+              <ul class="f-cb">
+                  <li><a title="����ֱ��" href="http://v.163.com/">����ֱ��</a></li>
+                  <li><a title="N����" href="http://www.nduoa.com/">N����</a></li>
+                  <li><a title="���ӿƼ�" href="http://uc.cn/">���ӿƼ�</a></li>
+                  <li><a title="�����ֻ����" href="http://www.waptw.com/">�����ֻ����</a></li>
+                  <li><a title="�ݽ�" href="http://www.paojiao.cn/">�ݽ�����</a></li>
+                  <li><a title="91�ֻ�����" href="http://zs.91.com/scqdz/91sj/">91�ֻ�����</a></li>
+                  <li><a title="������" href="http://www.weiphone.com/">������</a></li>
+                  <li><a title="�ƶ�MM" href="http://mm.10086.cn/">�ƶ�MM</a></li>
+                  <li><a title="�㶹���ֻ�����" href="http://wandoujia.com/">�㶹��</a></li>
+                  <li><a title="������" href="http://www.pcpop.com/">������</a></li>
+                  <li><a title="����Ӧ�û�" href="http://www.yingyonghui.com/">����Ӧ�û�</a></li>
+                  <li><a title="3G�Ż�" href="http://www.3g.cn/">3G�Ż�</a></li>
+                  <li><a title="��׿��" href="http://www.hiapk.com/">��׿��</a></li>
+                  <li><a title="������" href="http://www.gfan.com/">������</a></li>
+                  <li><a title="������" href="http://www.anzhi.com/">������</a></li>
+                  <li><a title="360��ȫ��ʿ" href="http://www.360.cn/">360��ȫ��ʿ</a></li>
+                  <li><a title="��è����" href="http://m.ks.91.com/">��è����</a></li>
+                  <li><a title="��������" href="http://www.ihanghai.com/">��������</a></li>
+                  <li><a title="mobile2.0" href="http://www.mobile20.com.cn/">Mobile2.0</a></li>
+                  <li><a title="��ý" href="http://www.zmcn.cn/">��ý</a></li>
+                  <li><a title="TOMPDA" href="http://www.tompda.com/">TOMPDA</a></li>
+                  <li><a title="�ڴ�����" href="http://www.pdafans.com/">PDAFANS</a></li>
+                  <li><a title="�йش�����" href="http://mobile.zol.com.cn/">�йش�����</a></li>
+                  <li><a title="̫ƽ���ֻ�" href="http://mobile.pconline.com.cn/">̫ƽ���ֻ�</a></li>
+                  <li><a title="�ֻ��й�" href="http://www.cnmo.com/">�ֻ��й�</a></li>
+                  <li><a title="iPhone������" href="http://iphone.tgbus.com/">iPhone������</a></li>
+                  <li><a title="PCPOP�ֻ�" href="http://mobile.pcpop.com/">PCPOP�ֻ�</a></li>
+                  <li><a title="�ֻ�֮��" href="http://www.imobile.com.cn/">�ֻ�֮��</a></li>
+                  <li><a title="������" href="http://baoruan.com/adlink/link/linkin/link_id/102 ">������</a></li>
+                  <li><a title="����" href="http://www.wapmy.cn/">����</a></li>
+              </ul>
+          </div>
+          <div class="right f-fr">
+              <h3 class="tit">��ע����<span>�����ɨ���ά��</span></h3>
+              <div class="f-cb">
+                  <div class="imitem f-fl">
+                      <a href="http://weibo.com/163open"><img src="//img0.ph.126.net/8AxPGEc9w57PODXyTP7ZWA==/703124491923477183.png"></a>
+                      <p>����΢��</p>
+                  </div>  
+                  <div class="imitem f-fl last">
+                      <a href="//img1.ph.126.net/-P5hIeVoUNFg27It1H2VCQ==/1835216848253716954.jpg"><img src="//img0.ph.126.net/awEXqMILP0yhyV1mEQ291g==/2585066186128739346.png"></a>
+                      <p>΢�Ź��ں�</p>
+                  </div>  
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ���� -->
+  <div class="m-sidebar m-sidebar2" id="j-appdown">
+    <div class="appdown">
+      <div>
+        <span class="f-c6">�ͻ�������</span>
+        <a class="f-icon f-c6 close" id="j-close-appdown" title="�ر�">�c</a>
+      </div>
+      <div>
+        <a href="http://m.163.com/openapp/" target="_blank"><img width="85px" height="85px" src="//s2.open.163.com/ocb/res/img/liantu.png" alt="�ͻ�������" class="img"></a>
+      </div>
+      <p class="f-c6">ɨ���������</p>
+    </div>
+  </div>
+  <div class="m-sidebar">
+    <div class="btn-group">
+      <div class="btn shareBtn u-appsprite j-sharebtn">
+          <div class="sharebox j-sharebox"></div>
+      </div>
+      <a class="btn scrollBtn" id="j-scrollBtn" title="�ص�����"></a>
+    </div>
+  </div>
+  <!-- /���� -->
+  <!-- @FOOTER -->
+  <!-- ����ҳ��ͨ��footer -->
+  <div class="m-footer">
+    <div class="g-container clear">
+      <p class="links">
+        <a href="http://corp.163.com/eng/about/overview.html" target="_blank">About NetEase</a><span>-</span>
+        <a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">��˾���</a><span>-</span>
+        <a href="http://gb.corp.163.com/gb/contactus.html" target="_blank">��ϵ��ʽ</a><span>-</span>
+        <a href="http://hr.163.com/" target="_blank">��Ƹ��Ϣ</a><span>-</span>
+        <a href="http://help.163.com/" target="_blank">�ͻ�����</a><span>-</span>
+        <a href="http://gb.corp.163.com/gb/legal.html" target="_blank">��ط���</a><span>-</span>
+        <a href="http://emarketing.163.com/" target="_blank">����Ӫ��</a><span>-</span>
+        <a href="http://sitemap.163.com/" target="_blank">��վ��ͼ</a><span>-</span>
+        <a href="http://survey2.163.com/html/userexperience/cover.html" target="_blank">�û����������ƻ�</a>
+      </p>
+      <p class="cr">
+        �й���ѧ��Ƶ�����������ڡ��л����񹲺͹�����Ȩ����<br/>
+        �й���ѧ��Ƶ�����ξ��ߵȽ������������ʹ�ã�TED��BBC��Courser����Ȩ�����ʹ�á�δ��������������ת��<br/>
+        ����������������ƽ̨������Ƶ��Ʒ����Creative Common֪ʶ��������-����ҵ��ʹ��-��ͬ��ʽ���� 2.5 �й���½���Э�������� 
+      </p>
+      <div class="theme"></div>
+    </div>
+  </div>
+  <!-- ����ҳ��ͨ��footer end -->
+  
+  <!-- ga&devilfish -->
+  <script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var   _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-41448977-1'],['_setLocalGifPath', 'http://wr.da.netease.com/UA-41448977-1/__utm.gif'],['_setLocalRemoteServerMode']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); 
+        ga.type = 'text/javascript'; 
+        ga.async = true;
+        ga.src = 'http://wr.da.netease.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; 
+        s.parentNode.insertBefore(ga, s);
+      })();
+      _ntes_nacc = "163v";
+    neteaseTracker();
+    neteaseClickStat();
+  </script>
+  <!-- /ga&devilfish -->
+  <!-- /@FOOTER -->
+  
+  <!-- @COMMONJS -->
+  <script src = "//s2.open.163.com/ocb/js/opencoure.min.js" charset="UTF-8"></script>
+  <script src = "//s2.open.163.com/ocb/js/page/play/player_util.js"></script>
+  <script src="//open.163.com/special/008565J4/opencourseshare.js"></script>
+  <!-- /@COMMONJS -->
+  <script charset="utf-8">
+  (function(jq, g){
+      var overlaycss = {
+          cursor:'default'
+      }
+      function showIosDialog(node){
+          var dialog = jq('#j-ios-dialog');
+          
+          jq('.j-dltit', dialog).text(jq(node).text());
+          jq.blockUI({
+              message:dialog,
+              blockMsgClass:'u-dl',
+              overlayCSS:overlaycss
+          });
+          if (jq(node).hasClass('j-dlbtn-ios')) {
+              gatrack(0);
+          }else{
+              gatrack(1);
+          } 
+      } 
+      function showAndroidphoneDialog(node){
+          var dialog = jq('#j-androidphone-dialog');
+          jq('.j-dltit', dialog).text(jq(node).text());
+          jq.blockUI({
+              message:dialog,
+              blockMsgClass:'u-dl',
+              overlayCSS:overlaycss
+          });
+          gatrack(2);
+      }
+      function showAndroidpadDialog(node){
+          var dialog = jq('#j-androidpad-dialog');
+          jq('.j-dltit', dialog).text(jq(node).text());
+          jq.blockUI({
+              message:dialog,
+              blockMsgClass:'u-dl',
+              overlayCSS:overlaycss
+          });
+          gatrack(3);
+      }
+      function showVideo(){
+          var dialog = jq('#j-video-dialog');
+          var swfUrl = 'http://swf.ws.126.net/openplayer/v01/-0-2_M8L22163H_MA365EEC4-vimg1_ws_126_net//image/snapshot_movie/2014/8/6/R/MA365D46R-.swf';
+          var flashVars = 'isSimple=1&isUserAutoPlay=1&isShowPreAd=0&isShowPlayAfter=0&isShowMidAd=0&enableLogo=0'
+          dialog.fadeIn();
+          showPlayer(swfUrl + '?' + flashVars);  
+          
+      }
+      function showTop(){
+          var bs = jq('.j-banner');
+          bs.eq(0).animate({
+              opacity : 1,
+              left : '-15px' 
+          }, 800);
+          bs.eq(1).animate({
+              opacity : 1,
+              right : '63px'
+          }, 800);
+          bs.eq(2).animate({
+              opacity : 1,
+              right : '0'
+          }, 800);
+          bs.eq(3).animate({
+              opacity : 1,
+              right : '40px'
+          }, 800);
+      }
+      function showFn(node){
+          var st = 13, dur = 300, timer;
+          var item  = node;
+          var baseOpacity = 0, baseMatrix = 0.9;
+          timer = setInterval(function(){
+              baseOpacity = baseOpacity + 1 * st / dur
+              baseOpacity = baseOpacity > 1 ? 1 : baseOpacity;
+              baseMatrix = baseMatrix + 0.1 * st / dur
+              baseMatrix = baseMatrix > 1 ? 1 : baseMatrix;
+              item.css({
+                  opacity : baseOpacity,
+                  transform : 'matrix('+ baseMatrix +', 0, 0, '+ baseMatrix +', 0, 0)'
+              });
+              if (baseOpacity == 1 && baseMatrix == 1) {
+                  clearInterval(timer);
+                  return;
+              };
+              
+          }, st);
+      }
+      function showFns(){
+          var timer, wrap = jq('#j-fnlist'), 
+              settings = {
+                  container:window,
+                  threshold:0
+              };
+          timer = setInterval(function(){
+              if (jq.belowthefold) {
+                  if (!jq.belowthefold(wrap, settings) && !jq.rightoffold(wrap, settings)) {
+                      clearInterval(timer);
+                      var items = jq('.j-fnitem');
+                      items.each(function(index, item){
+                          setTimeout(function(){
+                              showFn(jq(item));
+                          }, index * 200)
+                      });
+         
+                  };
+              }else{
+              }
+          }, 100);
+      }
+      function init(){
+          jq.blockUI.defaults.css = {};
+          jq('.j-dlbtn-ios').on('click', function(){
+              showIosDialog(this);
+          });
+          jq('.j-dlbtn-andphone').on('click', function(){
+              showAndroidphoneDialog(this);
+          });
+          jq('.j-dlbtn-andpad').on('click', function(){
+              showAndroidpadDialog(this);
+          });
+          jq('.j-dl-close').on('click', function(){
+              jq.unblockUI();
+          });
+          jq('.j-vdl-close').on('click', function(){
+              jq('#j-video-dialog').fadeOut();
+              jq('#j-player').html('');
+          });
+          jq('#j-play').on('click', function(){
+              showVideo();
+          });
+      }
+      function gatrack(type){
+          var gaClickType = [
+              'down_ios_phone',
+              'down_ios_pad',
+              'down_Android_phone', 
+              'down_Android_pad'
+          ];
+          var category = 'client', action = 'download', msg = gaClickType[type || 0];
+          if(!!window._gaq){
+              window._gaq.push(['_trackEvent', category, action, msg]);
+          }
+      }
+      function showPlayer(url){
+          jq('#j-player').html('');
+          g.openCourse.openplayer({
+              parent: jq('#j-player'),
+              src: url,
+              appsrc: 'http://mov.bn.netease.com/open-movie/nos/mp4/2014/08/20/SA365CPQQ_shd.m3u8',
+              w: '100%',
+              h: '100%'
+          });
+      }
+      //ȫ�ķ���
+      g.openCourse.ShareUI({
+          parent:jq('.j-sharebox'),
+          title:'����@���׹����� ��ʶ�Ҹ���̽��δ֪�������Լ������ɣ�������ѧԱһ��̤�ϳɳ�����ѭ��������У�����ݽ�����ר�⣡�����԰�>>>http://m.163.com/openapp/',
+          topic:'����@���׹����� ��ʶ�Ҹ���̽��δ֪�������Լ������ɣ�������ѧԱһ��̤�ϳɳ�����ѭ��������У�����ݽ�����ר�⣡�����԰�>>>http://m.163.com/openapp/',
+          pic:"http://img2.ph.126.net/Mzbi8NN4N-ElrCVV_RkSvA==/3019382075275852172.png",
+          description:""
+      });
+      jq('.j-sharebtn').hover(function () {
+          jq(this).find('.j-sharebox').show();
+      }, function () {
+          jq(this).find('.j-sharebox').hide();
+      });
+      init();
+      showTop();
+      setTimeout(function(){
+          showFns();
+      }, 800);
+      
+  })(jQuery, window);
+  </script>
+</body>
+</html>
