@@ -1,0 +1,23 @@
+.wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+.title{
+    text-align: center;
+}
+.row{
+    padding:10px 0;
+    justify-content:center;
+}
+.last-row{
+    text-align: center;
+}
+input{
+    height:30px;
+    border:none;
+    outline:none;
+    border:1px solid #b5b5b5;
+    background-color: #fff;
+}

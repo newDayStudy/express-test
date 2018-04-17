@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title%></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        header{
+            height:50px;
+            padding:0 0.5rem;
+            line-height: 50px;
+            background-color: #eee;
+        }
+        .container-wrapper{
+            display: -webkit-flex;
+            display: flex;
+            width:100%;
+            height:calc(100% - 50px);
+        }
+        .menu{
+            width:200px;
+            height:100%;
+            overflow: auto;
+            background-color: azure;
+        }
+        .content{
+            height:100%;
+            overflow: auto;
+        }
+        .menu-item{
+            padding: 5px 0 5px 0px;
+            cursor: pointer;
+            text-indent:20px;
+        }
+        .submenu{
+            display: none;
+        }
+        .menu-item:hover{
+            background-color: aquamarine;
+        }
+        .sub-item{
+            cursor: pointer;
+            text-indent:30px;
+        }
+        .sub-item:hover{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <!--header-->
+    <%- include('../../common/header.html') %>
+    <!--left menu-->
+    <div class="container-wrapper">
+        <%- include('../../common/menu.html') %>
+        <div class="content">
+            <div class="content-wrapper">
+                通知列表
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="/javascripts/menu.js"></script>
+
+</body>
+</html>

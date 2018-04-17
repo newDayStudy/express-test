@@ -1,0 +1,21 @@
+thead tr th, tbody tr td{
+    line-height: 30px;
+    border:1px solid #D5D5D5;
+    border-top:0;
+    text-align: center;
+    font-weight: bold;
+}
+thead tr th.first,tbody tr td.first{
+    border-left: none;
+}
+thead tr th.last{
+    border-right:none;
+}
+.view,.view:hover{
+    color:#EEA120;
+    text-decoration: none;
+}
+.del,.del:hover{
+    color: red;
+    text-decoration: none;
+}

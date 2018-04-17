@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title%></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+
+    <script src="/ueditor/ueditor.config.js"></script>
+    <script src="/ueditor/ueditor.all.js"></script>
+    <script src="/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <style>
+        .editor-wrap{
+            height:140px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <!--header-->
+    <%- include('../../common/header.html') %>
+    <!--left menu-->
+    <div class="container-wrapper">
+        <%- include('../../common/menu.html') %>
+        <div class="content">
+            <h3 class="title"><i class="iconfont">&#xe637;</i>当前位置: 文章管理>添加文章</h3>
+            <div class="content-wrapper">
+                <div class="container-body">
+                    <div class="form">
+                        <ul class="form-list">
+                            <li class="form-item">
+                                <label for="">所属版块</label>
+                                <select name="category" id="category">
+                                    <% category.forEach(function(values){%>
+                                        <option value='<%= values.id%>'><%= values.name%></option>
+                                    <%})%>
+                                </select>
+                            </li>
+                            <li class="form-item">
+                                <label for="">标题</label>
+                                <input type="text" name="title">
+                            </li>
+                            <li class="form-item">
+                                <label for="">作者</label>
+                                <input type="text" name="author">
+                            </li>
+                            <li class="form-item">
+                                <label for="">来源</label>
+                                <input type="text" name="source">
+                            </li>
+                            <li class="form-item">
+                                <label for="">摘要</label>
+                                <input type="text" name="important">
+                            </li>
+                            <li class="form-item">
+                                <label for="">内容</label>
+                                <div class="editor-wrap">
+                                    <script id="editor" style="width:100%;height:100px;margin:auto"></script>
+                                </div>
+
+                            </li>
+                            <li class="form-item">
+                                <button type="button" class="submit">确定</button>
+                                <button type="cancel">重置</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="/javascripts/menu.js"></script>
+<script src="/javascripts/block.js"></script>
+<script>
+    var title = '<%= route%>'
+    judeMenu(title)
+</script>
+<script>
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor');
+
+    $('.submit').on('click',function () {
+        var html = ue.getContent()
+        var [category_id, title, author, source, important] = [
+            $('#category').val(),
+            $('input[name=title]').val(),
+            $('input[name=author]').val(),
+            $('input[name=source]').val(),
+            $('input[name=important]').val()
+        ]
+        $.ajax({
+            type: 'post',
+            url: 'http://localhost:3000/article/submitArticle',
+            data: {
+                category_id: category_id,
+                title: title,
+                author: author,
+                source: source,
+                important: important,
+                content: html
+            },
+            success:function (data) {
+                alert(data)
+            },
+            error:function (err) {
+                
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

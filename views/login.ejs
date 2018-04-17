@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=title%>%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="wrap">
+    <div class="container">
+        <h1 class="title">登录</h1>
+        <div class="row">
+            <input type="text" placeholder="用户名">
+        </div>
+        <div class="row">
+            <input type="password" placeholder="密码">
+        </div>
+        <div class="row last-row">
+            <button type="button" class="btn btn-primary">登录</button>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/login.js"></script>
+    <script>
+        $('button[type=button]').on('click',function () {
+            var username = $('input[type=text]').val()
+            var password = $('input[type=password]').val()
+            login({
+                username: username,
+                password: password
+            },success, error)
+        })
+        function success(data){
+            if (data.code == 1) {
+                alert(data.msg)
+                window.location.href = 'http://localhost:3000'
+            }
+        }
+        function error(error){
+
+        }
+    </script>
+</body>
+</html>

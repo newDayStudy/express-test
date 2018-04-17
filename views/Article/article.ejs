@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/table.css">
+</head>
+<body>
+<div class="container-fluid">
+    <!--header-->
+    <%- include('../../common/header.html') %>
+    <!--left menu-->
+    <div class="container-wrapper">
+        <%- include('../../common/menu.html') %>
+        <div class="content">
+            <h3 class="title"><i class="iconfont">&#xe637;</i>当前位置: 文章管理>文章列表</h3>
+            <div class="content-wrapper">
+                <div class="container-body">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <th class="first">标题</th>
+                                <th>作者</th>
+                                <th>来源</th>
+                                <th>发布时间</th>
+                                <th>更新时间</th>
+                                <th class="last">操作</th>
+                            </tr>
+                        </thead>
+                         <tbody>
+                        <%article.total.forEach(function (values) {%>
+                            <tr>
+                                <td class="first"><%= values.title%></td>
+                                <td><%= values.author%></td>
+                                <td><%= values.source%></td>
+                                <td><%= new Date(values.start_time).toLocaleString()%></td>
+                                <td><%= new Date(values.update_time).toLocaleString()%></td>
+                                <td class="last">
+                                    <a href="/article/viewArticle?id=<%= values.id%>" class="view"><i class="iconfont">&#xe66b;</i>查看</a>
+                                    <a href="/article/delArticle?id=<%= values.id%>" class="del"><i class="iconfont">&#xe62f;</i>删除</a>
+                                </td>
+                            </tr>
+                        <%})%>
+                    </tbody>
+                    </table>
+                    <div class="pagination clearfix">
+                        <div class="fl">总记录数：<%= article.totalRecord%></div>
+                        <ul class="pagination-list fl">
+                            <%for(var i=1; i<=article.totalPage;i++){%>
+                                <%if( i == article.num){%>
+                                    <li class="pagination-item pagination-item-active"><a href="/article?page=<%=i%>"><%= i %></a></li>
+                                <%}else{%>
+                                    <li class="pagination-item"><a href="/article?page=<%=i%>"><%= i %></a></li>
+                                <%}%>
+                            <%}%>
+                        </ul>
+                        <div class="fr">
+                            跳转到第<input type="text" class="page"> 页
+                            <button type="button" class="skipNext">跳转</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="/javascripts/menu.js"></script>
+<script src="/javascripts/block.js"></script>
+<script>
+    var title = '<%= route%>'
+    judeMenu(title)
+
+    $('.skipNext').on('click',function () {
+        var page = $('.page').val()
+        window.location.href = '/article?page='+page
+    })
+    $('.pagination-item').on('click',function () {
+        if ($(this).hasClass('pagination-item-active')) {
+            return
+        } else {
+            $(this).addClass('pagination-item-active').sibling().removeClass('pagination-item-active')
+        }
+    })
+</script>
+</body>
+</html>

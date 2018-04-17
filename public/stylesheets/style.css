@@ -1,0 +1,75 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,figure{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+
+html,body{
+    width:100%;
+    height:100%;
+    font-size: 12px;
+    overflow: hidden;
+    background-color: #F8F8F8;
+}
+.fr{
+    float: right;
+}
+.fl{
+    float: left;
+}
+.clearfix:after{
+    content: '';
+    display:block;
+    clear: both;
+
+}
+.container-fluid{
+    padding-left:0;
+    padding-right:0;
+    height:100%;
+}
+::-webkit-scrollbar{
+    width:0;
+}
+label{
+    margin-bottom: 0;
+}
+.block{
+    display: block;
+}
+
+@font-face {
+    font-family: 'iconfont';  /* project id 630151 */
+    src: url('http://at.alicdn.com/t/font_630151_ln99u90rnitl0udi.eot');
+    src: url('http://at.alicdn.com/t/font_630151_ln99u90rnitl0udi.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_630151_ln99u90rnitl0udi.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_630151_ln99u90rnitl0udi.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_630151_ln99u90rnitl0udi.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family: "iconfont";
+    font-size:16px;
+    vertical-align: middle;
+}
+i{
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+    color: #eee;
+}
+ul,menu,dir{
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}

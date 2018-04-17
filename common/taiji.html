@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: #eee;
+        }
+        .taiji{
+            display: flex;
+            align-items: center;
+            width: 400px;
+            height:400px;
+            background: linear-gradient(#000 50%, #fff 50%);
+            /*background-color: #eee;*/
+            margin: 100px auto;
+            border-radius: 50%;
+        }
+        /*.topc,.bottomc{*/
+            /*width: 400px;*/
+            /*height:200px;*/
+        /*}*/
+        /*.topc{*/
+            /*background-color: #000;*/
+            /*border-radius: 200px 200px 0 0;*/
+        /*}*/
+        /*.bottomc{*/
+            /*background-color: #fff;*/
+            /*border-radius: 0 0 200px 200px;*/
+        /*}*/
+            .left,.right{
+                width:200px;
+                height:200px;
+                border-radius: 50%;
+
+            }
+            .left{
+                background: linear-gradient(#000 25%,#fff 50%);
+                animation: changeSize 1s infinite alternate linear;
+                transform-origin: 0 50%;
+            }
+            .right{
+                background: linear-gradient(#fff 25%, #000 50%);
+                animation: changeSize 1s infinite alternate linear;
+                transform-origin: 50% 100%;
+            }
+        @keyframes changeSize {
+            from  {
+                transform: scale(.5);
+            }
+            to{
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="taiji">
+        <!--<div class="topc"></div>-->
+        <!--<div class="bottomc"></div>-->
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
