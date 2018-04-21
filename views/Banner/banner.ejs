@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title%></title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/table.css">
 </head>
 <body>
 <div class="container-fluid">
@@ -16,8 +16,61 @@
     <div class="container-wrapper">
         <%- include('../../common/menu.html') %>
         <div class="content">
+            <h3 class="title"><i class="iconfont">&#xe637;</i>当前位置: banner管理>banner列表</h3>
             <div class="content-wrapper">
-                banner列表
+                <div class="container-body">
+                    <table width="100%">
+                        <thead>
+                        <tr>
+                            <th class="first">名称</th>
+                            <th>图片</th>
+                            <th>显示位置</th>
+                            <th>发布时间</th>
+                            <th>更新时间</th>
+                            <th class="last">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% banner.total.forEach(function (values) {%>
+                        <tr>
+                            <td class="first"><%= values.name%></td>
+                            <td class="first">
+                                <img src="<%= values.src%>" alt="" width="100" height="50">
+                            </td>
+                            <td>
+                                <%if(values.slug == 'top'){%>
+                                    banner
+                                <%} else if(values.slug == 'bottom'){%>
+                                    底部
+                                <%}%>
+                            </td>
+                            <td><%= new Date(values.start_time).toLocaleString()%></td>
+                            <td><%= new Date(values.update_time).toLocaleString()%></td>
+                            <td class="last">
+                                <a href="/banner/viewBanner?id=<%= values.id%>" class="view"><i class="iconfont">&#xe66b;</i>查看</a>
+                                <a href="/banner/delBanner?id=<%= values.id%>" class="del"><i class="iconfont">&#xe62f;</i>删除</a>
+                            </td>
+                        </tr>
+                        <%})%>
+                        </tbody>
+                    </table>
+                    <div class="pagination clearfix">
+                        <div class="fl">总记录数：<%= banner.totalRecord%></div>
+                        <ul class="pagination-list fl">
+                            <%for(var i=1; i<=banner.totalPage;i++){%>
+                            <%if( i == banner.num){%>
+                            <li class="pagination-item pagination-item-active"><a href="/banner?page=<%=i%>"><%= i %></a></li>
+                            <%}else{%>
+                            <li class="pagination-item"><a href="/banner?page=<%=i%>"><%= i %></a></li>
+                            <%}%>
+                            <%}%>
+                        </ul>
+                        <div class="fr">
+                            跳转到第<input type="text" class="page"> 页
+                            <button type="button" class="skipNext">跳转</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        html,body,div{
+            margin: 0;
+            padding:0;
+        }
+        .ball{
+            position: relative;
+            width:160px;
+            height: 158px;
+            border-radius: 160px 160px 64px 160px;
+            box-shadow: -8px -8px 80px -8px blue inset;
+            transform: rotate(45deg);
+            transition: 1s;
+        }
+        .ball:before{
+            position: absolute;
+            right:0;
+            bottom:0px;
+            content: '';
+            display: block;
+            border: 8px solid transparent;
+            border-right-color: blue;
+            border-radius:16px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        var h = window.innerHeight
+        var w = window.innerWidth
+        var body =document.querySelector('body')
+        var ball = []
+        class Ball{
+            constructor(){
+                this.x =  (w-160)*Math.random()
+                this.y = h
+                this.speed = (Math.random()+1)*2
+                this.scale = 1
+                this.scalespeed =1
+                this.step = 1
+                this.vy = -(Math.random()+1)*3
+                this.init()
+            }
+            init () {
+                this.div = document.createElement('div')
+                this.div.className = 'ball'
+                this.setPos()
+                this.register()
+                body.appendChild(this.div)
+            }
+            setPos () { // 初始化小球位置
+                this.div.style.top = this.y + 'px'
+                this.div.style.left = this.x  + 'px'
+                this.div.style.transform = 'rotate('+this.rotate+'deg) scale('+this.scale+')'
+                this.update()
+            }
+            reset () { // 重置小球位置
+                this.y = h
+                this.x = (w-160)*Math.random()
+                this.step = 1
+                this.scale = 1
+                this.scalespeed = 1
+                this.setPos()
+            }
+            update () {
+                this.step *= -1
+                this.scale *= this.scalespeed
+                this.y += this.vy
+                this.rotate = 45+45*this.step
+                if (this.y < -160) {
+                    this.reset()
+                }
+            }
+            register () {
+                this.div.onclick = () => {
+                    this.speed = 5
+                    this.scalespeed = 0.97
+                    this.step = 1
+                }
+            }
+        }
+//        function initBall() {
+//            var ball = document.createElement('div')
+//            ball.style.top = h + 'px'
+//            ball.style.left = (w-160)*Math.random() + 'px'
+//            var speed  = (Math.random()+1)*2
+//            var scale = 1
+//            var scalespeed = 1
+//            var step = 0
+//            ball.className= 'ball'
+//            body.appendChild(ball)
+//            setInterval(function () {
+//                step *= -1
+//                scale *= scalespeed
+//                console.log(scale)
+//				ball.style.top = ball.offsetTop-speed + 'px'
+//                ball.style.transform = 'rotate('+(45+45*step)+'deg) scale('+scale+')'
+//                if (ball.offsetTop < -120) {
+//                    step = 0
+//                    ball.style.top = h + 'px'
+//                    ball.style.left = (w-160)*Math.random() + 'px'
+//                    scale = 1
+//                    scalespeed = 1
+//                }
+//			}, 1000 / 60)
+//            ball.onclick = function () {
+//                speed = 5
+//                scalespeed = 0.97
+//                step = 1
+//            }
+//        }
+//
+        for (var i=0; i<3;i++) {
+            ball.push(new Ball())
+        }
+        console.log(ball)
+        setInterval(()=>{
+            ball.forEach((item)=>{
+                item.setPos()
+            })
+        }, 1000/60)
+    </script>
+</body>
+</html>
